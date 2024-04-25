@@ -1,8 +1,9 @@
 import Medusa from "@medusajs/medusa-js";
 
 export default defineNuxtPlugin((nuxtApp) => {
+  const config = useRuntimeConfig();
   const client = new Medusa({
-    baseUrl: "http://localhost:9000",
+    baseUrl: config.public.apiBase,
     maxRetries: 2,
   });
   return {
