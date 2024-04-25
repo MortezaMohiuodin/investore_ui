@@ -1,10 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   theme: {
-    colors: {},
-    fontFamily: {},
-    borderRadius: {},
-    boxShadow: {},
     extend: {
       colors: {},
       animation: {},

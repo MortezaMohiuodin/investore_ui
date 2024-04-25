@@ -1,3 +1,17 @@
+const customModulesConfig = {
+  snackbar: {
+    bottom: true,
+    right: true,
+    duration: 5000
+  },
+  swiper: {
+    // Swiper options
+    //----------------------
+    // prefix: 'Swiper',
+    // styleLang: 'css',
+    // modules: ['navigation', 'pagination'], // all modules are imported by default
+  }
+}
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
@@ -12,5 +26,11 @@ export default defineNuxtConfig({
     }
   },
 
-  modules: ["@nuxtjs/tailwindcss"]
+  modules: [
+    "@nuxtjs/tailwindcss",
+    "@vueuse/nuxt",
+    "nuxt-swiper"
+  ],
+  ...customModulesConfig
 })
+
