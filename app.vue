@@ -4,6 +4,7 @@
   </div>
 </template>
 <script setup>
-const { $medusa } = useNuxtApp();
-const { products } = await $medusa.products.list();
+const { $api } = useNuxtApp();
+const { products } = await $api.getProducts();
+console.log(products);
 </script>
