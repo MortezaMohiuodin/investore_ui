@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@medusajs/medusa-js": "^6.1.8",
+    "@nuxt/image": "^1.6.0",
     "@nuxtjs/tailwindcss": "^6.12.0",
     "@vueuse/core": "^10.9.0",
     "@vueuse/nuxt": "^10.9.0",
@@ -20,5 +21,8 @@
     "vue": "^3.4.21",
     "vue-router": "^4.3.0",
     "yup": "^1.4.0"
+  },
+  "devDependencies": {
+    "nuxt-icon": "^0.6.10"
   }
 }

@@ -29,7 +29,9 @@ export default defineNuxtConfig({
   modules: [
     "@nuxtjs/tailwindcss",
     "@vueuse/nuxt",
-    "nuxt-swiper"
+    "nuxt-swiper",
+    "@nuxt/image",
+    'nuxt-icon'
   ],
   ...customModulesConfig
 })
