@@ -1,7 +1,7 @@
 <template>
-  <div class="hidden md:block shadow-navbar">
+  <div class="hidden md:block shadow-navbar shadow-lg">
     <nav class="container mx-auto mb-4">
-      <div class="flex flex-wrap items-center justify-between mx-auto p-4">
+      <div class="flex flex-wrap items-center mx-auto p-4">
         <NuxtLink
           to="/"
           class="flex items-center space-x-3 rtl:space-x-reverse"
@@ -9,7 +9,7 @@
           <AppLogo />
         </NuxtLink>
 
-        <div class="hidden md:block w-full md:w-auto">
+        <div class="hidden md:block w-full md:w-auto ms-10">
           <ul
             class="flex flex-col font-medium mt-4 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent dark:bg-gray-800 md:dark:bg-transparent dark:border-gray-700"
           >
@@ -50,7 +50,7 @@
             </li>
           </ul>
         </div>
-        <div class="flex gap-2 items-center">
+        <div class="flex gap-2 items-center ms-auto">
           <Icon name="fe:search" />
           <Icon name="fe:app-menu" />
         </div>
