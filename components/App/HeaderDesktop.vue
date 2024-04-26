@@ -23,7 +23,7 @@
                 >{{ item.label }}</NuxtLink
               >
               <div v-else>
-                <FeatureMenu>
+                <AppMenu>
                   <template #trigger>
                     <span class="cursor-pointer">
                       <span
@@ -45,7 +45,7 @@
                       >
                     </li>
                   </ul>
-                </FeatureMenu>
+                </AppMenu>
               </div>
             </li>
           </ul>
