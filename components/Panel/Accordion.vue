@@ -6,7 +6,7 @@
       class="bg-transparent w-full flex justify-between items-center text-base font-medium rtl:text-right text-gray-700 gap-3"
     >
       <slot />
-      <Icon name="fe:arrow-right" :class="{ 'rotate-180': show }" />
+      <Icon name="fe:arrow-down" :class="{ 'rotate-180': show }" />
     </button>
     <Transition name="fade">
       <div v-if="show" class="mt-3">

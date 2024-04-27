@@ -8,7 +8,7 @@ import { sidebarOpen, closeSidebar } from "./store";
   <div
     :class="
       sidebarOpen &&
-      'bg-black fixed h-screen left-0 opacity-40 top-0 w-screen z-30 lg:bg-transparent'
+      'bg-black fixed h-screen left-0 opacity-40 top-0 w-screen z-100 lg:bg-transparent'
     "
     @click="closeSidebar"
   />

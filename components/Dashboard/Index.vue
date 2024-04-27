@@ -1,6 +1,6 @@
 <template>
   <div class="relative h-full">
-    <DashboardOverlay />
+    <DashboardOverlay class="md:hidden" />
     <DashboardDrawer mobile-orientation="end">
       <slot name="sidebar"> </slot>
     </DashboardDrawer>
@@ -12,12 +12,6 @@
           : 'transition-all duration-700 ease-out'
       "
     >
-      <Icon
-        name="fe:arrow-right"
-        :class="[{ '-rotate-180': !sidebarOpen }]"
-        @click="toggleSidebar()"
-      />
-
       <slot></slot>
     </div>
   </div>

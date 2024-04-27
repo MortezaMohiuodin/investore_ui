@@ -1,6 +1,6 @@
 <template>
   <aside
-    class="scrollbar top-0 bottom-0 h-full bg-white dark:bg-gray-700 dark:text-white custom-shadow rounded-lg z-10 overflow-y-auto text-black lg:absolute lg:z-40 lg:block"
+    class="scrollbar top-0 bottom-0 h-screen bg-white dark:bg-gray-700 dark:text-white custom-shadow rounded-lg z-10 overflow-y-auto text-black lg:absolute lg:z-40 lg:block"
     :class="[
       style.mobileOrientation[mobileOrientation],
       sidebarOpen
@@ -8,13 +8,6 @@
         : 'hidden transition-all duration-700 ease-out lg:w-24',
     ]"
   >
-    <Icon
-      name=""
-      :class="[{ '-rotate-180': !sidebarOpen }]"
-      @click="toggleSidebar()"
-      class="cursor-pointer absolute right-0 rtl:left-0 rtl:right-auto top-5 transition-all me-2"
-    />
-
     <slot />
   </aside>
 </template>
