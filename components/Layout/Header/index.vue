@@ -1,6 +1,6 @@
 <template>
   <div class="select-none">
-    <AppHeaderDesktop />
-    <AppHeaderMobile />
+    <LayoutHeaderDesktop />
+    <LayoutHeaderMobile />
   </div>
 </template>

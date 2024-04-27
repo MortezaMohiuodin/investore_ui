@@ -1,7 +1,7 @@
 <template>
-  <div class="hidden md:block shadow-navbar shadow-lg">
+  <div class="hidden md:block shadow-navbar shadow">
     <nav class="container mx-auto mb-4">
-      <div class="flex flex-wrap items-center mx-auto p-4">
+      <div class="flex flex-wrap justify-between items-center mx-auto p-4">
         <NuxtLink
           to="/"
           class="flex items-center space-x-3 rtl:space-x-reverse"
@@ -9,7 +9,7 @@
           <AppLogo />
         </NuxtLink>
 
-        <div class="hidden md:block w-full md:w-auto ms-10">
+        <div class="hidden md:block w-full md:w-auto">
           <ul
             class="flex flex-col font-medium mt-4 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent dark:bg-gray-800 md:dark:bg-transparent dark:border-gray-700"
           >
@@ -18,7 +18,7 @@
                 v-if="!item.children"
                 :to="item.to"
                 exactActiveClass="active-link"
-                class="pt-2 pb-1 border-b-[3px] border-transparent hover:border-green-200 translate-all"
+                class="pt-2 pb-1 border-b-[2px] border-transparent hover:border-green-200 translate-all"
                 aria-current="page"
                 >{{ item.label }}</NuxtLink
               >
@@ -27,7 +27,7 @@
                   <template #trigger>
                     <span class="cursor-pointer">
                       <span
-                        class="pt-2 pb-1 border-b-[3px] border-transparent"
+                        class="pt-2 pb-1 border-b-[2px] border-transparent"
                         aria-current="page"
                         >{{ item.label }}
                       </span>
@@ -50,9 +50,13 @@
             </li>
           </ul>
         </div>
-        <div class="flex gap-2 items-center ms-auto">
-          <Icon name="fe:search" />
-          <Icon name="fe:app-menu" />
+        <div class="flex gap-2 items-center">
+          <ElButtonIcon>
+            <Icon name="fe:cart" />
+          </ElButtonIcon>
+          <ElButtonIcon>
+            <Icon name="material-symbols:account-circle-outline" />
+          </ElButtonIcon>
         </div>
       </div>
     </nav>

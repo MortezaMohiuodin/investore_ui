@@ -4,6 +4,10 @@ const customModulesConfig = {
     right: true,
     duration: 5000
   },
+  nuxtIcon: {
+    size: '30px', // default <Icon> size applied
+    class: 'icon', // default <Icon> class applied
+  },
   swiper: {
     // Swiper options
     //----------------------
@@ -15,7 +19,7 @@ const customModulesConfig = {
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-
+  css: ['~/assets/css/main.css'],
   runtimeConfig: {
     // Private keys are only available on the server
     // apiSecret: '123',

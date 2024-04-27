@@ -1,6 +1,6 @@
 <template>
   <div class="flex">
-    <div v-for="product in data?.products" class="mx-2">
+    <!-- <div v-for="product in data?.products" class="mx-2">
       <div class="relative rounded-lg shadow-lg" style="width: 300px">
         <NuxtImg
           :src="product.thumbnail"
@@ -15,10 +15,11 @@
           <p>{{ product.description }}</p>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 <script setup>
 const { $api } = useNuxtApp();
-const { data } = await $api.getProducts();
+// const { data } = await $api.getProducts();
+const res = await $api.emptyCart();
 </script>

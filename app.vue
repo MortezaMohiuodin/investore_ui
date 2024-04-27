@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen h-full relative">
+  <div class="min-h-screen h-full relative font-peyda">
     <AppLoading v-if="$globalLoading" />
     <NuxtLayout />
   </div>

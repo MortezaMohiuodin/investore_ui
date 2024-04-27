@@ -1,0 +1,12 @@
+@font-face{
+    font-family: "PeydaWebThin";
+    src: url("peydaWebThin.eot");
+    src: url("peydaWebThin.eot?#iefix")format("embedded-opentype"),
+        url("peydaWebThin.woff")format("woff"),
+        url("peydaWebThin.woff2")format("woff2"),
+        url("peydaWebThin.ttf")format("truetype"),
+        url("peydaWebThin.svg#PeydaWeb")format("svg");
+    font-weight:thin;
+    font-style:normal;
+    font-display:swap;
+}

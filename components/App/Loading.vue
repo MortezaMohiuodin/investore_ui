@@ -15,22 +15,28 @@
 <style scoped>
 /* HTML: <div class="loader"></div> */
 .loader {
-  height: 4px;
-  width: 130px;
-  --c: no-repeat linear-gradient(#6100ee 0 0);
-  background: var(--c), var(--c), #d7b8fc;
-  background-size: 60% 100%;
-  animation: l16 3s infinite;
+  width: 50px;
+  --b: 8px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #514b82;
+  -webkit-mask: repeating-conic-gradient(
+      #0000 0deg,
+      #000 1deg 70deg,
+      #0000 71deg 90deg
+    ),
+    radial-gradient(
+      farthest-side,
+      #0000 calc(100% - var(--b) - 1px),
+      #000 calc(100% - var(--b))
+    );
+  -webkit-mask-composite: destination-in;
+  mask-composite: intersect;
+  animation: l5 1s infinite;
 }
-@keyframes l16 {
-  0% {
-    background-position: -150% 0, -150% 0;
-  }
-  66% {
-    background-position: 250% 0, -150% 0;
-  }
-  100% {
-    background-position: 250% 0, 250% 0;
+@keyframes l5 {
+  to {
+    transform: rotate(0.5turn);
   }
 }
 </style>

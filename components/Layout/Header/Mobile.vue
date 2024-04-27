@@ -1,32 +1,18 @@
 <template>
-  <div class="block md:hidden shadow-navbar dark:bg-gray-800">
+  <div class="block md:hidden shadow dark:bg-gray-800">
     <nav class="container mx-auto mb-4">
       <div class="grid grid-cols-3 items-center mx-auto p-4">
         <div class="flex items-center">
-          <button
+          <ElButtonIcon
             type="button"
             @click="drawer = true"
-            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 dark:text-white rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+            class="inline-flex items-center justify-center text-2xl text-gray-500 dark:text-white rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
             aria-controls="mobile-navbar"
             aria-expanded="false"
           >
             <span class="sr-only">Open main menu</span>
-            <svg
-              class="w-5 h-5"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 17 14"
-            >
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M1 1h15M1 7h15M1 13h15"
-              />
-            </svg>
-          </button>
+            <Icon name="heroicons:bars-3-bottom-right-solid" />
+          </ElButtonIcon>
         </div>
         <div class="mx-auto">
           <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
@@ -35,8 +21,12 @@
         </div>
 
         <div class="flex items-center justify-end">
-          <!-- <FeatureDarkMode /> -->
-          <!-- <SectionSearchMobile id="mobile-search" /> -->
+          <ElButtonIcon>
+            <Icon name="fe:cart" />
+          </ElButtonIcon>
+          <ElButtonIcon>
+            <Icon name="material-symbols:account-circle-outline" />
+          </ElButtonIcon>
         </div>
       </div>
     </nav>
@@ -44,19 +34,19 @@
   <Transition name="slide">
     <div
       v-if="drawer"
-      class="bg-white dark:bg-gray-700 dark:text-white dark:bg-gray-800 w-full h-full fixed right-0 left-0 top-0"
+      class="bg-white dark:text-white dark:bg-gray-800 w-full h-full fixed right-0 left-0 top-0"
       style="z-index: 1000"
     >
       <div class="flex justify-between py-10 px-8">
         <AppLogo />
-        <button
+        <ElButtonIcon
           type="button"
           @click="drawer = false"
-          class="text-gray-400 bg-transparent rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+          class="text-gray-400 bg-transparent rounded-lg text-2xl ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
         >
           <Icon name="fe:close" />
           <span class="sr-only">Close manu</span>
-        </button>
+        </ElButtonIcon>
       </div>
 
       <ul

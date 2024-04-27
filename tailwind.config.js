@@ -2,6 +2,11 @@
 export default {
   theme: {
     extend: {
+      fontFamily: {
+        peyda: ["PeydaWeb", "system-ui"],
+        "peyda-thin": ["PeydaWebThin", "system-ui"],
+        "peyda-bold": ["PeydaWebBold", "system-ui"],
+      },
       colors: {},
       animation: {},
     },

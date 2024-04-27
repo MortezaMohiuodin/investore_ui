@@ -5,6 +5,11 @@ export const MAIN_MENU = [
     to: "/",
   },
   {
+    name: "shop",
+    label: "فروشگاه",
+    to: "/shop",
+  },
+  {
     name: "blog",
     label: "بلاگ",
     to: "/blog",
@@ -14,30 +19,4 @@ export const MAIN_MENU = [
     label: "ارتباط با ما",
     to: "/contact",
   },
-  //   {
-  //     name: "multi",
-  //     label: "چندرسانه ای",
-  //     children: [
-  //       {
-  //         name: "multimedia",
-  //         label: "چندرسانه ای",
-  //         to: "/multimedia",
-  //       },
-  //       {
-  //         name: "videos",
-  //         label: "فیلم ها",
-  //         to: "/multimedia/videos",
-  //       },
-  //       {
-  //         name: "pictures",
-  //         label: "عکس ها",
-  //         to: "/multimedia/pictures",
-  //       },
-  //       {
-  //         name: "sounds",
-  //         label: "صوت ها",
-  //         to: "/multimedia/sounds",
-  //       },
-  //     ],
-  //   },
 ];

@@ -10,6 +10,8 @@ export default defineNuxtPlugin((nuxtApp) => {
   const client = createMedusaVueClient({
     baseUrl: config.public.apiBase,
     maxRetries: 2,
+    // apiKey : '',
+    // publishableApiKey : '',
   });
   nuxtApp.vueApp.use(client);
 
