@@ -25,7 +25,7 @@ export const ADMIN_MENU = [
   {
     name: "dashboard",
     label: "داشبورد",
-    to: "/",
+    to: "/admin/dashboard",
     icon: "material-symbols:dashboard",
   },
   {
@@ -39,7 +39,7 @@ export const ADMIN_MENU = [
     label: "محصولات",
     icon: "ri:product-hunt-fill",
     children: [
-      { name: "productList", label: "لیست", to: "/products" },
+      { name: "productList", label: "لیست", to: "/admin/dashboard/products" },
       { name: "productListArchive", label: "آرشیو", to: "/products-archives" },
     ],
   },

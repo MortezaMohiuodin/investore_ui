@@ -11,6 +11,4 @@ useHead({
 });
 
 const { $globalLoading } = useNuxtApp();
-const { $api } = useNuxtApp();
-const { products } = await $api.getProducts();
 </script>
