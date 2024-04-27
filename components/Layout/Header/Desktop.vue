@@ -54,7 +54,7 @@
           <ElButtonIcon>
             <Icon name="fe:cart" />
           </ElButtonIcon>
-          <ElButtonIcon>
+          <ElButtonIcon to="auth/login">
             <Icon name="material-symbols:account-circle-outline" />
           </ElButtonIcon>
         </div>

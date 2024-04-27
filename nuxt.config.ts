@@ -35,7 +35,8 @@ export default defineNuxtConfig({
     "@vueuse/nuxt",
     "nuxt-swiper",
     "@nuxt/image",
-    'nuxt-icon'
+    'nuxt-icon',
+    'nuxt-snackbar'
   ],
   ...customModulesConfig
 })

@@ -17,7 +17,7 @@
             margin: innerWidth ? 'auto' : 'initial',
           }"
         >
-          <div class="grid grid-cols-1 md:grid-cols-12 gap-5">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-2">
             <!-- Iterating through schema -->
             <template v-for="(field, index) in formSchema" :key="field.uuid">
               <!-- Condition to exist in form , default is true -->

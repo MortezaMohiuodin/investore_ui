@@ -21,5 +21,5 @@
 <script setup>
 const { $api } = useNuxtApp();
 // const { data } = await $api.getProducts();
-const res = await $api.emptyCart();
+// const res = await $api.emptyCart();
 </script>

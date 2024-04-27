@@ -1,5 +1,5 @@
 <template>
-  <button type="button" class="btn xs" :class="buttonClass" v-bind="$attrs">
+  <button type="button" class="btn base" :class="buttonClass" v-bind="$attrs">
     <slot />
     <slot name="icon">
       <Icon name="fe:sync" v-if="props.loading" />

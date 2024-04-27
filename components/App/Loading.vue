@@ -1,19 +1,17 @@
 <template>
   <div
-    class="fixed left-0 top-0 w-screen h-screen z-50 bg-white dark:bg-gray-500 dark:text-white select-none"
+    class="absolute left-0 top-0 right-0 bottom-0 z-50 bg-[#ffffff7d] select-none"
   >
     <div
       class="flex items-center justify-center w-full h-full gap-10 flex-col -mt-[40px]"
     >
-      <div class="text-center"></div>
       <div>
-        <div class="loader"></div>
+        <span class="loader"></span>
       </div>
     </div>
   </div>
 </template>
 <style scoped>
-/* HTML: <div class="loader"></div> */
 .loader {
   width: 50px;
   --b: 8px;
