@@ -1,5 +1,4 @@
 export const getCurrentUser = async () => {
-  const headers = getRequestHeaders();
   try {
     return await medusaClient.admin.auth.getSession();
   } catch (e) {
@@ -19,20 +18,17 @@ export const doAdminLogin = async (loginData) => {
 };
 
 export const doAdminLogout = async () => {
-  const headers = getRequestHeaders();
-
   await medusaClient.admin.auth.deleteSession();
 
   return;
 };
 
 export const doAdminJwtLogin = async (loginData) => {
-  const headers = getRequestHeaders();
   const body = {
     email: loginData.email,
     password: loginData.password,
   };
-  const currentUser = await medusaClient.admin.auth.getToken(body, headers);
+  const currentUser = await medusaClient.admin.auth.getToken(body);
 
   return currentUser;
 };

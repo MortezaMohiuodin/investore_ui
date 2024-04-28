@@ -9,9 +9,10 @@ export const signUp = async (customerData) => {
   return res;
 };
 export const getCurrentUser = async () => {
-  const headers = getRequestHeaders();
+  const headers = getMedusaHeaders(["auth"]);
+
   try {
-    return await medusaClient.auth.getSession();
+    return await medusaClient.auth.getSession(headers);
   } catch (e) {
     console.log(e);
   }
@@ -38,9 +39,8 @@ export const doJwtLogin = async (loginData) => {
 };
 
 export const doLogout = async () => {
-  const headers = getRequestHeaders();
   try {
-    await medusaClient.auth.deleteSession(headers);
+    await medusaClient.auth.deleteSession();
     token.value = "";
   } catch (e) {}
 

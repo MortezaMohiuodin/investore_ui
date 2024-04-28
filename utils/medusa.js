@@ -1,16 +1,20 @@
 import Medusa from "@medusajs/medusa-js";
-
-export const getRequestHeaders = () => {
+export const getMedusaHeaders = (tags = []) => {
   const token = useCookie("token");
-  let authorization;
-  if (token.value) {
-    authorization = `Bearer ${token.value}`;
-  } else {
-    authorization = "";
-  }
-  return {
-    authorization,
+
+  const headers = {
+    next: {
+      tags,
+    },
   };
+
+  if (token.value) {
+    headers.authorization = `Bearer ${token.value}`;
+  } else {
+    headers.authorization = "";
+  }
+
+  return headers;
 };
 export const medusaClient = new Medusa({
   baseUrl: "http://localhost:9000",
