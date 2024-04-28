@@ -101,3 +101,7 @@
  body.noscroll {
   overflow: hidden
 }
+
+.custom-snackbar .vue3-snackbar-message-title{
+  @apply font-peyda ms-2;
+}

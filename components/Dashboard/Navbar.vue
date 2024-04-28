@@ -16,15 +16,15 @@
   </div>
 </template>
 <script setup>
-const { $adminApi } = useNuxtApp();
+const { $api } = useNuxtApp();
 import { toggleSidebar } from "./store";
 const router = useRouter();
 const token = useCookie("token");
 const logout = async () => {
   try {
-    await $adminApi.doAdminLogout();
+    await $api.doLogout();
     token.value = "";
-    router.push("/admin/auth/login");
+    router.push("/auth/login");
   } catch (e) {}
 };
 </script>

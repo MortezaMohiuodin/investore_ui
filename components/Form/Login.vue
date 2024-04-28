@@ -74,6 +74,12 @@ const submit = async () => {
     token.value = res.access_token;
     router.push("/dashboard");
   } catch (e) {
+    if (e.response.status === 401) {
+      snackbar.add({
+        type: "error",
+        text: "اطلاعات به درستی وارد نشده است",
+      });
+    }
   } finally {
     loading.value = false;
   }

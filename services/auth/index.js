@@ -11,11 +11,13 @@ export const signUp = async (customerData) => {
 };
 export const getCurrentUser = async () => {
   const headers = getRequestHeaders();
-  console.log(headers);
+  console.log(headers, "heade");
   const { $medusa } = useNuxtApp();
-  const currentUser = await $medusa.auth.getSession(headers);
-
-  return currentUser;
+  try {
+    return await $medusa.auth.getSession();
+  } catch (e) {
+    console.log(e);
+  }
 };
 
 export const doLogin = async (loginData) => {
