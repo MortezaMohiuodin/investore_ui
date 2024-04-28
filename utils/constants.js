@@ -5,9 +5,9 @@ export const MAIN_MENU = [
     to: "/",
   },
   {
-    name: "shop",
+    name: "marketplace",
     label: "فروشگاه",
-    to: "/shop",
+    to: "/marketplace",
   },
   {
     name: "blog",
@@ -60,7 +60,7 @@ export const CUSTOMER_MENU = [
   {
     name: "orders",
     label: "سفارشات",
-    to: "/orders",
+    to: "/dashboard/orders",
     icon: "ri:product-hunt-fill",
   },
 ];
