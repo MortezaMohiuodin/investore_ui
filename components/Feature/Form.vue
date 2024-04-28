@@ -77,12 +77,6 @@
               </div>
             </template>
           </div>
-          <v-overlay
-            scrim="white"
-            :model-value="loading"
-            class="align-center justify-center"
-            contained
-          />
         </div>
       </div>
     </div>

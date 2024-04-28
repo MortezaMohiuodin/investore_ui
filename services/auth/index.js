@@ -10,9 +10,12 @@ export const signUp = async (customerData) => {
   return res;
 };
 export const getCurrentUser = async () => {
+  const token = ref(useLocalStorage("token"));
   const { $medusa } = useNuxtApp();
-
-  const currentUser = await $medusa.auth.getSession();
+  let authorization = `Bearer ${token.value}`;
+  const currentUser = await $medusa.auth.getSession({
+    authorization,
+  });
 
   return currentUser;
 };
@@ -40,12 +43,14 @@ export const doJwtLogin = async (loginData) => {
 };
 
 export const doLogout = async () => {
+  const token = ref(useLocalStorage("token"));
   const { $medusa } = useNuxtApp();
-  const body = {
-    email: loginData.email,
-    password: loginData.password,
-  };
-  await $medusa.auth.deleteSession();
+  try {
+    await $medusa.auth.deleteSession({
+      authorization: `Bearer ${token.value}`,
+    });
+    token.value = "";
+  } catch (e) {}
 
   return;
 };

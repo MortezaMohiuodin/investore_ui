@@ -18,6 +18,9 @@ const schema = ref([
   },
 ]);
 
+const { $adminApi } = useNuxtApp();
+const res = await $adminApi.getCurrentUser();
+console.log(res);
 definePageMeta({
   layout: "admin",
 });

@@ -27,6 +27,7 @@ import { object, string } from "yup";
 import { doAdminLogin } from "~/services/admin/auth";
 const snackbar = useSnackbar();
 const form = ref({});
+const router = useRouter();
 const loading = ref(false);
 const emit = defineEmits(["onSubmit", "onCancel"]);
 const schema = computed(() => {
@@ -58,9 +59,11 @@ const yupSchema = object().shape({
 });
 
 const submit = async () => {
+  const { $adminApi } = useNuxtApp();
   loading.value = true;
   try {
-    await doAdminLogin();
+    const res = await $adminApi.doAdminLogin(form.value);
+    router.push("/admin/dashboard");
   } catch (e) {
   } finally {
     loading.value = false;

@@ -1,16 +1,15 @@
 <template>
-  <div
-    class="absolute left-0 top-0 right-0 bottom-0 z-50 bg-[#ffffff7d] select-none"
-  >
+  <div class="absolute left-0 top-0 right-0 bottom-0 z-50 bg-white select-none">
     <div
       class="flex items-center justify-center w-full h-full gap-10 flex-col -mt-[40px]"
     >
       <div>
-        <span class="loader"></span>
+        <div class="loader"></div>
       </div>
     </div>
   </div>
 </template>
+<script setup></script>
 <style scoped>
 .loader {
   width: 50px;

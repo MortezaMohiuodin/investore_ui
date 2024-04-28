@@ -18,8 +18,4 @@
 </template>
 <script setup>
 import { toggleSidebar, sidebarOpen } from "@/components/Dashboard/store";
-
-definePageMeta({
-  layout: "blank",
-});
 </script>

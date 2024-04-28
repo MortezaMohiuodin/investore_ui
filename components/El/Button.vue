@@ -1,10 +1,15 @@
 <template>
-  <button type="button" class="btn base" :class="buttonClass" v-bind="$attrs">
+  <nuxt-link
+    type="button"
+    class="btn cursor-pointer"
+    :class="buttonClass"
+    v-bind="$attrs"
+  >
     <slot />
     <slot name="icon">
       <Icon name="fe:sync" v-if="props.loading" />
     </slot>
-  </button>
+  </nuxt-link>
 </template>
 
 <script setup>
@@ -35,7 +40,7 @@ const buttonClass = computed(() => {
 
 <style scoped>
 .btn {
-  @apply text-center text-white font-medium focus:outline-none rounded-lg inline-flex gap-2 items-center border-2 border-transparent;
+  @apply text-center text-white py-2 font-medium focus:outline-none rounded-lg inline-flex gap-2 items-center border-2 border-transparent;
 }
 .xs {
   @apply px-3 py-2 text-xs;
@@ -59,6 +64,6 @@ const buttonClass = computed(() => {
   @apply text-gray-900 focus:outline-none bg-white dark:bg-gray-700 dark:text-white border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700;
 }
 .plain {
-  @apply text-gray-900 focus:outline-none;
+  @apply text-gray-900 bg-gray-100 hover:bg-gray-200 focus:outline-none;
 }
 </style>

@@ -54,9 +54,15 @@
           <ElButtonIcon>
             <Icon name="fe:cart" />
           </ElButtonIcon>
-          <ElButtonIcon to="auth/login">
+          <!-- <ElButtonIcon to="auth/login">
             <Icon name="material-symbols:account-circle-outline" />
-          </ElButtonIcon>
+          </ElButtonIcon> -->
+          <ElButton to="/auth/login" class="sm font-peyda-bold" color="plain">
+            ورود / ثبت نام
+          </ElButton>
+          <ElButton to="/dashboard" class="sm font-peyda-bold" color="plain">
+            داشبودر
+          </ElButton>
         </div>
       </div>
     </nav>

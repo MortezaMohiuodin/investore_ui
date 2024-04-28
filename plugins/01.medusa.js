@@ -1,5 +1,4 @@
 import Medusa from "@medusajs/medusa-js";
-// import { createMedusaVueClient } from "@medusa-vue/core";
 
 export default defineNuxtPlugin((nuxtApp) => {
   const config = useRuntimeConfig();
@@ -7,13 +6,6 @@ export default defineNuxtPlugin((nuxtApp) => {
     baseUrl: config.public.apiBase,
     maxRetries: 2,
   });
-  // const client = createMedusaVueClient({
-  //   baseUrl: config.public.apiBase,
-  //   maxRetries: 2,
-  //   // apiKey : '',
-  //   // publishableApiKey : '',
-  // });
-  // nuxtApp.vueApp.use(client);
 
   return {
     provide: {

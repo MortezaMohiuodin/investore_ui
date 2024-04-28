@@ -13,7 +13,10 @@
     >
       <template #actions="{ onSubmit }">
         <div class="mt-3">
-          <ElButton @click="onSubmit" class="w-full justify-center"
+          <ElButton
+            type="submit"
+            @click="onSubmit"
+            class="w-full justify-center"
             >ورود
           </ElButton>
         </div>
@@ -29,6 +32,8 @@
 </template>
 <script setup>
 import { object, string } from "yup";
+const router = useRouter();
+const token = ref(useLocalStorage("token"));
 const snackbar = useSnackbar();
 const form = ref({});
 const loading = ref(false);
@@ -61,14 +66,16 @@ const yupSchema = object().shape({
   password: string().required(),
 });
 
-const submit = () => {
+const submit = async () => {
+  const { $api } = useNuxtApp();
   loading.value = true;
-  setTimeout(() => {
+  try {
+    const res = await $api.doJwtLogin(form.value);
+    token.value = res.access_token;
+    router.push("/dashboard");
+  } catch (e) {
+  } finally {
     loading.value = false;
-    snackbar.add({
-      type: "success",
-      text: " با موفقیت ارسال شد ",
-    });
-  }, 2000);
+  }
 };
 </script>
