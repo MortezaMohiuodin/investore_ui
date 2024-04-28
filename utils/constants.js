@@ -50,3 +50,17 @@ export const ADMIN_MENU = [
     icon: "material-symbols:category",
   },
 ];
+export const CUSTOMER_MENU = [
+  {
+    name: "dashboard",
+    label: "داشبورد",
+    to: "/dashboard",
+    icon: "material-symbols:dashboard",
+  },
+  {
+    name: "orders",
+    label: "سفارشات",
+    to: "/orders",
+    icon: "ri:product-hunt-fill",
+  },
+];

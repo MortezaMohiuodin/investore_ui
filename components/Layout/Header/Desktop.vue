@@ -60,9 +60,6 @@
           <ElButton to="/auth/login" class="sm font-peyda-bold" color="plain">
             ورود / ثبت نام
           </ElButton>
-          <ElButton to="/dashboard" class="sm font-peyda-bold" color="plain">
-            داشبودر
-          </ElButton>
         </div>
       </div>
     </nav>

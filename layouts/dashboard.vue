@@ -1,12 +1,14 @@
 <template>
   <Dashboard>
     <template #sidebar>
-      <div>sidebar</div>
+      <LayoutSidebar :items="CUSTOMER_MENU" />
     </template>
-    <div
-      class="px-2 pb-36 pt-4 md:pb-8 lg:px-4 bg-white dark:bg-gray-700 dark:text-white"
-    >
+    <div>
+      <DashboardNavbar />
       <NuxtPage />
     </div>
   </Dashboard>
 </template>
+<script setup>
+import { CUSTOMER_MENU } from "@/utils/constants";
+</script>
