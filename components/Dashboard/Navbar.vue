@@ -9,12 +9,22 @@
       <ElButtonIcon>
         <Icon name="material-symbols:account-circle-outline" />
       </ElButtonIcon>
-      <ElButtonIcon>
+      <ElButtonIcon @click="logout">
         <Icon name="ic:baseline-logout" />
       </ElButtonIcon>
     </div>
   </div>
 </template>
 <script setup>
+const { $adminApi } = useNuxtApp();
 import { toggleSidebar } from "./store";
+const router = useRouter();
+const token = useCookie("token");
+const logout = async () => {
+  try {
+    await $adminApi.doAdminLogout();
+    token.value = "";
+    router.push("/admin/auth/login");
+  } catch (e) {}
+};
 </script>
