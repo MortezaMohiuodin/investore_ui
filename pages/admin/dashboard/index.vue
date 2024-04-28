@@ -10,11 +10,11 @@
 <script setup>
 definePageMeta({
   layout: "admin",
+  middleware: ["admin-auth"],
 });
 
 const { $adminApi } = useNuxtApp();
 const data = await $adminApi.getCurrentUser();
-const { products } = await $adminApi.getAdminProducts();
 
 const test = () => {
   console.log(token.value, "token");

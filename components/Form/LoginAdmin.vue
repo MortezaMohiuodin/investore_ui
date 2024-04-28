@@ -67,10 +67,12 @@ const submit = async () => {
 
     router.push("/admin/dashboard");
   } catch (e) {
-    snackbar.add({
-      type: "error",
-      text: "اطلاعات وارد شده صحیح نیست",
-    });
+    if (e.response.status === 401) {
+      snackbar.add({
+        type: "error",
+        text: "اطلاعات به درستی وارد نشده است",
+      });
+    }
   } finally {
     loading.value = false;
   }

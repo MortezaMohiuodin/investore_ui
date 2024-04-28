@@ -6,9 +6,7 @@
     v-bind="$attrs"
   >
     <slot />
-    <slot name="icon">
-      <Icon name="fe:sync" v-if="props.loading" />
-    </slot>
+    <slot name="icon"> </slot>
   </nuxt-link>
 </template>
 
