@@ -1,13 +1,11 @@
 export const getProducts = async () => {
-  const { $medusa } = useNuxtApp();
-  const res = await $medusa.products.list();
+  const res = await medusaClient.products.list();
 
   return res;
 };
 
 export const searchProducts = async (query) => {
-  const { $medusa } = useNuxtApp();
-  const res = await $medusa.products.search({
+  const res = await medusaClient.products.search({
     q: query,
   });
 
@@ -15,31 +13,26 @@ export const searchProducts = async (query) => {
 };
 
 export const getProduct = async (productId) => {
-  const { $medusa } = useNuxtApp();
-  const res = await $medusa.products.retrieve(productId);
+  const res = await medusaClient.products.retrieve(productId);
   return res;
 };
 
 export const getProductVariants = async () => {
-  const { $medusa } = useNuxtApp();
-  const res = await $medusa.products.variants.list();
+  const res = await medusaClient.products.variants.list();
   return res;
 };
 
 export const getProductVariant = async (variantId) => {
-  const { $medusa } = useNuxtApp();
-  const res = await $medusa.products.variants.retrieve(variantId);
+  const res = await medusaClient.products.variants.retrieve(variantId);
   return res;
 };
 
 export const getProductCategories = async () => {
-  const { $medusa } = useNuxtApp();
-  const res = await $medusa.productCategories.list();
+  const res = await medusaClient.productCategories.list();
   return res;
 };
 
 export const getProductCategory = async (productCategoryId) => {
-  const { $medusa } = useNuxtApp();
-  const res = await $medusa.productCategories.retrieve(productCategoryId);
+  const res = await medusaClient.productCategories.retrieve(productCategoryId);
   return res;
 };

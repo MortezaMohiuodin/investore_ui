@@ -1,8 +1,7 @@
 export const getCurrentUser = async () => {
-  const { $medusa } = useNuxtApp();
   const headers = getRequestHeaders();
   try {
-    return await $medusa.admin.auth.getSession();
+    return await medusaClient.admin.auth.getSession();
   } catch (e) {
     console.log(e);
     return;
@@ -10,33 +9,30 @@ export const getCurrentUser = async () => {
 };
 
 export const doAdminLogin = async (loginData) => {
-  const { $medusa } = useNuxtApp();
   const body = {
     email: loginData.email,
     password: loginData.password,
   };
-  const currentUser = await $medusa.admin.auth.createSession(body);
+  const currentUser = await medusaClient.admin.auth.createSession(body);
 
   return currentUser;
 };
 
 export const doAdminLogout = async () => {
   const headers = getRequestHeaders();
-  const { $medusa } = useNuxtApp();
 
-  await $medusa.admin.auth.deleteSession();
+  await medusaClient.admin.auth.deleteSession();
 
   return;
 };
 
 export const doAdminJwtLogin = async (loginData) => {
-  const { $medusa } = useNuxtApp();
   const headers = getRequestHeaders();
   const body = {
     email: loginData.email,
     password: loginData.password,
   };
-  const currentUser = await $medusa.admin.auth.getToken(body, headers);
+  const currentUser = await medusaClient.admin.auth.getToken(body, headers);
 
   return currentUser;
 };

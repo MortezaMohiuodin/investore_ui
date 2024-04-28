@@ -1,21 +1,15 @@
 export const getCustomer = async () => {
-  const { $medusa } = useNuxtApp();
-
-  const currentCustomer = await $medusa.customers.retrieve();
+  const currentCustomer = await medusaClient.customers.retrieve();
   return currentCustomer;
 };
 
 export const updateCustomer = async (customer) => {
-  const { $medusa } = useNuxtApp();
-
-  const res = await $medusa.customers.update(customer);
+  const res = await medusaClient.customers.update(customer);
   return res;
 };
 
 export const addShippingAddress = async () => {
-  const { $medusa } = useNuxtApp();
-
-  const res = await $medusa.customers.addresses.addAddress({
+  const res = await medusaClient.customers.addresses.addAddress({
     address: {
       first_name: "Celia",
       last_name: "Schumm",
@@ -33,9 +27,7 @@ export const addShippingAddress = async () => {
 };
 
 export const updateShippingAddress = async (addressId) => {
-  const { $medusa } = useNuxtApp();
-
-  const res = await $medusa.customers.addresses.updateAddres(addressId, {
+  const res = await medusaClient.customers.addresses.updateAddres(addressId, {
     first_name: "Gina",
   });
 
@@ -43,24 +35,19 @@ export const updateShippingAddress = async (addressId) => {
 };
 
 export const deleteShippingAddress = async (addressId) => {
-  const { $medusa } = useNuxtApp();
-
-  const res = await $medusa.customers.addresses.deleteAddress(addressId);
+  const res = await medusaClient.customers.addresses.deleteAddress(addressId);
 
   return res;
 };
 
 export const getCustomerOrders = async () => {
-  const { $medusa } = useNuxtApp();
-
-  const res = await $medusa.customers.listOrders();
+  const res = await medusaClient.customers.listOrders();
 
   return res;
 };
 
 export const resetPassword = async () => {
-  const { $medusa } = useNuxtApp();
-  const res = await $medusa.customers.resetPassword({
+  const res = await medusaClient.customers.resetPassword({
     email: "user@example.com",
     password: "supersecret",
     token: "supersecrettoken",
@@ -69,8 +56,7 @@ export const resetPassword = async () => {
 };
 
 export const requestResetPassword = async (email) => {
-  const { $medusa } = useNuxtApp();
-  const res = await $medusa.customers.generatePasswordToken({
+  const res = await medusaClient.customers.generatePasswordToken({
     email: email,
   });
   return res;

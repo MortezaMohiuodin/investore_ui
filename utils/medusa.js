@@ -1,3 +1,5 @@
+import Medusa from "@medusajs/medusa-js";
+
 export const getRequestHeaders = () => {
   const token = useCookie("token");
   let authorization;
@@ -10,3 +12,7 @@ export const getRequestHeaders = () => {
     authorization,
   };
 };
+export const medusaClient = new Medusa({
+  baseUrl: "http://localhost:9000",
+  maxRetries: 2,
+});
