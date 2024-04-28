@@ -1,8 +1,8 @@
 export const getRequestHeaders = () => {
-  const token = ref(useLocalStorage("token"));
+  const token = useCookie("token");
   let authorization;
   if (token.value) {
-    authorization = `Bearer ${token}`;
+    authorization = `Bearer ${token.value}`;
   } else {
     authorization = "";
   }

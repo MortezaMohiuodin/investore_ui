@@ -1,7 +1,8 @@
 export const getCurrentUser = async () => {
   const { $medusa } = useNuxtApp();
-
-  const currentUser = await $medusa.admin.auth.getSession();
+  const headers = getRequestHeaders();
+  console.log(headers);
+  const currentUser = await $medusa.admin.auth.getSession(headers);
 
   return currentUser;
 };
@@ -27,11 +28,12 @@ export const doAdminLogout = async () => {
 
 export const doAdminJwtLogin = async (loginData) => {
   const { $medusa } = useNuxtApp();
+  const headers = getRequestHeaders();
   const body = {
     email: loginData.email,
     password: loginData.password,
   };
-  const currentUser = await $medusa.admin.auth.getToken(body);
+  const currentUser = await $medusa.admin.auth.getToken(body, headers);
 
   return currentUser;
 };

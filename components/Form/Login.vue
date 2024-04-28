@@ -33,7 +33,7 @@
 <script setup>
 import { object, string } from "yup";
 const router = useRouter();
-const token = ref(useLocalStorage("token"));
+const token = useCookie("token");
 const snackbar = useSnackbar();
 const form = ref({});
 const loading = ref(false);

@@ -24,7 +24,7 @@
 </template>
 <script setup>
 import { object, string } from "yup";
-import { doAdminLogin } from "~/services/admin/auth";
+const token = useCookie("token");
 const snackbar = useSnackbar();
 const form = ref({});
 const router = useRouter();
@@ -62,9 +62,15 @@ const submit = async () => {
   const { $adminApi } = useNuxtApp();
   loading.value = true;
   try {
-    const res = await $adminApi.doAdminLogin(form.value);
+    const res = await $adminApi.doAdminJwtLogin(form.value);
+    token.value = res.access_token;
+
     router.push("/admin/dashboard");
   } catch (e) {
+    snackbar.add({
+      type: "error",
+      text: "اطلاعات وارد شده صحیح نیست",
+    });
   } finally {
     loading.value = false;
   }
