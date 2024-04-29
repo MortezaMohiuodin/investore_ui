@@ -16,7 +16,7 @@
         >
       </div>
       <ElButton class="w-full mt-2 justify-center" @click="emit('onBuy', item)">
-        خرید
+        افزودن به سبد خرید
       </ElButton>
     </div>
   </div>
