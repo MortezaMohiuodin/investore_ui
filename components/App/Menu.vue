@@ -7,7 +7,7 @@
     </div>
     <div
       v-show="show"
-      class="left-1/2 transform -translate-x-1/2 py-3 absolute top-10 custom-shadow bg-white dark:bg-gray-700 dark:text-white z-10 divide-y divide-gray-100 rounded-lg shadow min-w-[150px] overflow-hidden"
+      class="left-20 transform -translate-x-1/2 py-3 absolute top-10 custom-shadow bg-white dark:bg-gray-700 dark:text-white z-10 divide-y divide-gray-100 rounded-lg shadow min-w-[150px] overflow-hidden"
     >
       <div>
         <slot />

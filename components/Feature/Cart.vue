@@ -49,7 +49,7 @@
             </li>
           </ul>
           <div class="text-left mt-3">
-            <ElButton class="sm justify-center">
+            <ElButton class="sm justify-center" @click="handleNext">
               <template #icon>
                 <Icon name="fe:arrow-left" />
               </template>
@@ -67,6 +67,8 @@
 const { $api } = useNuxtApp();
 const cart = useCart();
 const loading = ref(false);
+const router = useRouter();
+const auth = useAuth();
 const handleDelete = async (item) => {
   loading.value = true;
   const res = await $api.deleteProductFromCart(cart.value.id, item.id);
@@ -74,5 +76,13 @@ const handleDelete = async (item) => {
     cart.value = res.cart;
   }
   loading.value = false;
+};
+
+const handleNext = () => {
+  if (auth.value) {
+    router.push("/cart");
+  } else {
+    router.push("/auth/login", { params: { nextRoute: "/cart" } });
+  }
 };
 </script>

@@ -36,6 +36,8 @@ const router = useRouter();
 const token = useCookie("token");
 const snackbar = useSnackbar();
 const form = ref({});
+const auth = useAuth();
+const route = useRoute();
 const loading = ref(false);
 const emit = defineEmits(["onSubmit", "onCancel"]);
 const schema = computed(() => {
@@ -72,7 +74,11 @@ const submit = async () => {
   try {
     const res = await $api.doJwtLogin(form.value);
     token.value = res.access_token;
-    router.push("/dashboard");
+    if (route.params.nextRoute) {
+      router.push(route.params.nextRoute);
+    } else {
+      router.push("/dashboard");
+    }
   } catch (e) {
     if (e.response.status === 401) {
       snackbar.add({
