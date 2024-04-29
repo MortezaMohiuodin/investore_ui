@@ -16,19 +16,19 @@ const { $api } = useNuxtApp();
 const { products } = await $api.getProducts();
 const auth = useAuth();
 const cart = useCart();
+const cart_id = useCookie("cart_id");
 
 const handleBuyClick = async (item) => {
   if (!cart.value) {
     const res = await $api.createCart();
     cart.value = res.cart;
     cart_id.value = cart.value.id;
-  } else {
-    const variant = item.variants[0];
-    const res = await $api.addProductToCart(cart.value.id, {
-      variant_id: variant.id,
-      quantity: 1,
-    });
-    cart.value = res.cart;
   }
+  const variant = item.variants[0];
+  const res = await $api.addProductToCart(cart.value.id, {
+    variant_id: variant.id,
+    quantity: 1,
+  });
+  cart.value = res.cart;
 };
 </script>
