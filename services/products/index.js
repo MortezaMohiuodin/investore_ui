@@ -1,7 +1,9 @@
 export const getProducts = async () => {
-  const res = await medusaClient.products.list();
-
-  return res;
+  try {
+    return await medusaClient.products.list();
+  } catch (e) {
+    console.log(e);
+  }
 };
 
 export const searchProducts = async (query) => {

@@ -51,13 +51,16 @@
           </ul>
         </div>
         <div class="flex gap-2 items-center">
-          <ElButtonIcon>
-            <Icon name="fe:cart" />
-          </ElButtonIcon>
-          <!-- <ElButtonIcon to="auth/login">
+          <FeatureCart />
+          <ElButtonIcon to="/dashboard" v-if="token">
             <Icon name="material-symbols:account-circle-outline" />
-          </ElButtonIcon> -->
-          <ElButton to="/auth/login" class="sm font-peyda-bold" color="plain">
+          </ElButtonIcon>
+          <ElButton
+            to="/auth/login"
+            class="sm font-peyda-bold"
+            color="plain"
+            v-else
+          >
             ورود / ثبت نام
           </ElButton>
         </div>
@@ -67,6 +70,8 @@
 </template>
 <script setup>
 import { MAIN_MENU } from "~/utils/constants";
+const token = useCookie("token");
+const cart = useCart();
 </script>
 <style>
 .active-link {

@@ -6,12 +6,29 @@
         v-for="product in products"
         :item="product"
         :key="product.id"
+        @on-buy="handleBuyClick"
       />
     </div>
   </div>
 </template>
 <script setup>
 const { $api } = useNuxtApp();
-
 const { products } = await $api.getProducts();
+
+const cart = useCart();
+
+const handleBuyClick = async (item) => {
+  if (!cart.value) {
+    const res = await $api.createCart();
+    cart.value = res.cart;
+    cart_id.value = cart.value.id;
+  } else {
+    const variant = item.variants[0];
+    const res = await $api.addProductToCart(cart.value.id, {
+      variant_id: variant.id,
+      quantity: 1,
+    });
+    cart.value = res.cart;
+  }
+};
 </script>

@@ -1,1 +1,1 @@
-export const useTest = () => useState("test", () => false);
+export const useCart = () => useState("cart", () => null);

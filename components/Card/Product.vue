@@ -7,17 +7,17 @@
     />
     <div class="p-3">
       <h5 class="font-bold text-lg mb-3 line-clamp-1">
-        {{ item.title }} fadsfdasfsdafsad fasdkl;j sda;f jsd;lafj sdl;afjksdal
+        {{ item.title }}
       </h5>
-      <pre class="text-gray-500 mb-4">{{
-        item?.variants[0]?.prices[0]?.amount
-      }}</pre>
+
       <div class="flex justify-between mt-3">
         <span class="text-gray-800"
           >تومان : {{ item?.variants[0]?.prices[0]?.amount || 3000 }}</span
         >
       </div>
-      <ElButton class="w-full mt-2 justify-center"> خرید </ElButton>
+      <ElButton class="w-full mt-2 justify-center" @click="emit('onBuy', item)">
+        خرید
+      </ElButton>
     </div>
   </div>
 </template>
@@ -28,4 +28,5 @@ const props = defineProps({
     default: () => ({}),
   },
 });
+const emit = defineEmits("onBuy");
 </script>

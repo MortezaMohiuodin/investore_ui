@@ -36,6 +36,7 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "nuxt-icon",
     "nuxt-snackbar",
+    "@pinia/nuxt",
   ],
 
   ...customModulesConfig,
