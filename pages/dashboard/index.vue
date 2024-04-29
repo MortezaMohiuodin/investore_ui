@@ -1,8 +1,5 @@
 <template>
-  <div>
-    <button @click="doTest">test</button>
-    <button @click="logout">Logout</button>
-  </div>
+  <div>dashboard</div>
 </template>
 <script setup>
 definePageMeta({

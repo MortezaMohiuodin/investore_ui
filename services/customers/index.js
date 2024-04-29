@@ -41,9 +41,13 @@ export const deleteShippingAddress = async (addressId) => {
 };
 
 export const getCustomerOrders = async () => {
-  const res = await medusaClient.customers.listOrders();
+  const headers = getMedusaHeaders(["auth"]);
 
-  return res;
+  try {
+    return await medusaClient.customers.listOrders({}, headers);
+  } catch (e) {
+    console.log(e);
+  }
 };
 
 export const resetPassword = async () => {

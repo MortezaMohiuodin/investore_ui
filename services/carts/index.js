@@ -52,3 +52,18 @@ export const deleteProductFromCart = async (cartId, itemId) => {
     console.log(e);
   }
 };
+
+export const createPaymentSessions = async (cartId) => {
+  try {
+    return await medusaClient.carts.createPaymentSessions(cartId);
+  } catch (e) {
+    console.log(e);
+  }
+};
+export const setPaymentSession = async (cartId, provider) => {
+  try {
+    return await medusaClient.carts.setPaymentSession(cartId, provider);
+  } catch (e) {
+    console.log(e);
+  }
+};

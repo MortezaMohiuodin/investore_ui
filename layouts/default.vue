@@ -19,7 +19,7 @@ await callOnce(async () => {
 
     cart.value = res.cart;
   }
-  if (auth.value) {
+  if (auth.value && cart_id.value) {
     if (auth.value?.id !== cart.value?.customer_id) {
       const res = await $api.updateCart(cart.value.id, {
         customer_id: auth.value.id,
