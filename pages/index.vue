@@ -17,7 +17,7 @@ const res = await $api.getProducts();
 const auth = useAuth();
 const cart = useCart();
 const cart_id = useCookie("cart_id");
-console.log("test");
+console.log("testd");
 const handleBuyClick = async (item) => {
   if (!cart.value) {
     const res = await $api.createCart();
