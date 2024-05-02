@@ -9,11 +9,16 @@ const customModulesConfig = {
     class: "icon", // default <Icon> class applied
   },
   swiper: {
-    // Swiper options
-    //----------------------
     // prefix: 'Swiper',
     // styleLang: 'css',
     // modules: ['navigation', 'pagination'], // all modules are imported by default
+  },
+  proxy: {
+    options: {
+      target: "https://investore-back.liara.run",
+      changeOrigin: true,
+      pathFilter: ["/store"],
+    },
   },
 };
 // https://nuxt.com/docs/api/configuration/nuxt-config
@@ -21,12 +26,8 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ["~/assets/css/main.css"],
   runtimeConfig: {
-    // Private keys are only available on the server
-    // apiSecret: '123',
-
-    // Public keys that are exposed to the client
     public: {
-      apiBase: process.env.NUXT_PUBLIC_API_BASE || "/api",
+      apiBase: "https://investore-back.liara.run" || "/api",
     },
   },
   modules: [
@@ -37,7 +38,7 @@ export default defineNuxtConfig({
     "nuxt-icon",
     "nuxt-snackbar",
     "@pinia/nuxt",
+    "nuxt-proxy",
   ],
-
   ...customModulesConfig,
 });

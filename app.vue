@@ -9,5 +9,5 @@
 useHead({
   htmlAttrs: { dir: "rtl", lang: "fa" },
 });
-const { $globalLoading, $api } = useNuxtApp();
+const { $globalLoading } = useNuxtApp();
 </script>

@@ -17,6 +17,6 @@ export const getMedusaHeaders = (tags = []) => {
   return headers;
 };
 export const medusaClient = new Medusa({
-  baseUrl: "http://localhost:9000",
+  baseUrl: "https://investore-back.liara.run",
   maxRetries: 2,
 });
